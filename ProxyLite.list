@@ -1,6 +1,7 @@
 # 代理补充列表
 
 # 域名后缀匹配
+DOMAIN-SUFFIX,gfe.nvidia.com
 DOMAIN-SUFFIX,kinguin.net
 DOMAIN-SUFFIX,services.googleapis.cn
 DOMAIN-SUFFIX,xn--ngstr-lra8j.com
