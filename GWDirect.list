@@ -1,0 +1,7 @@
+# 国外域名不解析直连，防止走代理使用
+
+# MyList
+# 域名后缀匹配
+DOMAIN-SUFFIX,sonkwo.hk
+DOMAIN-SUFFIX,sonkwo.com
+
