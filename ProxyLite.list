@@ -5,6 +5,7 @@ DOMAIN-SUFFIX,gfe.nvidia.com
 DOMAIN-SUFFIX,kinguin.net
 DOMAIN-SUFFIX,services.googleapis.cn
 DOMAIN-SUFFIX,xn--ngstr-lra8j.com
+DOMAIN-SUFFIX,adtidy.org
 # 域名关键字匹配
 DOMAIN-KEYWORD,1e100
 
