@@ -16,6 +16,8 @@ IP-CIDR,103.115.43.2/32,no-resolve
 
 # 国外测速
 DOMAIN-SUFFIX,speedtest.net
+DOMAIN-SUFFIX,ooklaserver.net
+DOMAIN-SUFFIX,fdcservers.net
 DOMAIN-SUFFIX,fast.com
 
 # 国外DNS
