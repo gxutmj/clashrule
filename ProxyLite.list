@@ -9,6 +9,9 @@ DOMAIN-SUFFIX,adtidy.org
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,1e100
+DOMAIN-KEYWORD,v2ray
+DOMAIN-KEYWORD,ssr
+
 
 # 机场域名
 DOMAIN-SUFFIX,zqjc.org
