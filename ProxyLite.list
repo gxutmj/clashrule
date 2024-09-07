@@ -1,4 +1,18 @@
 # 代理补充列表
+# 游戏
+DOMAIN-SUFFIX,epicgames.com
+DOMAIN-SUFFIX,epicgames.dev
+DOMAIN-SUFFIX,helpshift.com
+DOMAIN-SUFFIX,paragon.com
+DOMAIN-SUFFIX,unrealengine.com
+DOMAIN,cloudsync-prod.s3.amazonaws.com
+DOMAIN,eaasserts-a.akamaihd.net
+DOMAIN,origin-a.akamaihd.net
+DOMAIN,originasserts.akamaized.net
+DOMAIN,rtm.tnt-ea.com
+DOMAIN-SUFFIX,ea.com
+DOMAIN-SUFFIX,origin.com
+
 
 # 域名后缀匹配
 DOMAIN-SUFFIX,gfe.nvidia.com
