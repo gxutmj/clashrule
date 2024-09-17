@@ -17,6 +17,9 @@ DOMAIN-KEYWORD,ssr
 
 # 机场域名
 DOMAIN-SUFFIX,zqjc.org
+DOMAIN-SUFFIX,hongxingdl.com
+DOMAIN-SUFFIX,顶级机场.com
+DOMAIN-KEYWORD,bigme
 
 # IP段匹配
 IP-CIDR,142.171.133.131/32,no-resolve
