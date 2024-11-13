@@ -17,12 +17,12 @@ DOMAIN-SUFFIX,freedidi.com
 DOMAIN-SUFFIX,qichiyu.com
 DOMAIN-SUFFIX,butailing.com
 DOMAIN-SUFFIX,nivod.cc
-DOMAIN-SUFFIX,nivodi.com
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,1e100
 DOMAIN-KEYWORD,v2ray
 DOMAIN-KEYWORD,ssr
+DOMAIN-KEYWORD,nivodi
 
 
 # 机场域名
