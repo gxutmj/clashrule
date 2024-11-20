@@ -15,8 +15,8 @@
     },
   "dns": {
     "servers": [
-      {"tag": "proxyDns", "address": ["tls://8.8.8.8", "tls://1.1.1.1"], "address_resolver": "localDns", "address_strategy": "prefer_ipv4", "detour": "🚀 节点选择"},
-      {"tag": "localDns", "address": ["223.5.5.5", "119.29.29.29"], "address_strategy": "prefer_ipv4","detour": "🎯 全球直连"},
+      {"tag": "proxyDns", "address": "tls://8.8.8.8", "address_resolver": "localDns", "address_strategy": "prefer_ipv4", "detour": "🚀 节点选择"},
+      {"tag": "localDns", "address": "223.5.5.5", "address_strategy": "prefer_ipv4","detour": "🎯 全球直连"},
       {"tag": "block", "address": "rcode://success"}
     ],
     "rules": [
@@ -37,7 +37,6 @@
       "inet6_address": "fd00::1/64",
       "mtu": 9000,
       "auto_route": true,
-      "auto_route6": true,
       "sniff": true,
       "endpoint_independent_nat": false,
       "stack": "system",
