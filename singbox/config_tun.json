@@ -93,7 +93,7 @@
       { "rule_set": "geosite-youtube", "outbound": "📹 YouTube" },
       { "rule_set": ["geoip-google", "geosite-google"], "outbound": "🔍 Google" },
       { "rule_set": "geosite-microsoft-DIRECT", "outbound": "🪟 Microsoft" }, 
-      { "rule_set": ["geoip-telegram", "geosite-telegram", "geosite-tiktok", "geoip-netflix", "geosite-netflix", "geosite-github",], "outbound": "📲 Telegram" },
+      { "rule_set": ["geoip-telegram", "geosite-telegram", "geosite-tiktok", "geoip-netflix", "geosite-netflix", "geosite-github"], "outbound": "🚀 节点选择" },
       { "rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择" },
       { "rule_set": ["geoip-cn", "geosite-cn"], "outbound": "🎯 全球直连" }
     ],
