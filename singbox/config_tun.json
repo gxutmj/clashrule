@@ -21,6 +21,7 @@
     ],
     "rules": [
       {"outbound": "any", "server": "localDns", "disable_cache": true},
+      {"query_type": "HTTPS","server": "block"},
       {"rule_set": "geosite-cn", "server": "localDns"},
       {"clash_mode": "direct", "server": "localDns"},
       {"clash_mode": "global", "server": "proxyDns"},
