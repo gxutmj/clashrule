@@ -6,12 +6,13 @@
 
   "dns": {
     "servers": [
-      {"tag": "proxyDns", "address": "192.168.100.100", "address_strategy": "prefer_ipv4", "detour": "🎯 全球直连"},
+      {"tag": "proxyDns", "address": "https://dns.google/dns-query", "address_resolver": "localDns", "address_strategy": "prefer_ipv4", "detour": "🚀 节点选择"}
       {"tag": "localDns", "address": "192.168.100.200", "address_strategy": "prefer_ipv4","detour": "🎯 全球直连"},
       {"tag": "block", "address": "rcode://success"}
     ],
-    "rules": [
+ "rules": [
       {"outbound": "any", "server": "localDns", "disable_cache": true},
+      {"query_type": "HTTPS","server": "block"},
       {"rule_set": "geosite-cn", "server": "localDns"},
       {"clash_mode": "direct", "server": "localDns"},
       {"clash_mode": "global", "server": "proxyDns"},
@@ -29,6 +30,7 @@
       "mtu": 9000,
       "auto_route": true,
       "sniff": true,
+      "sniff_override_destination": false,
       "endpoint_independent_nat": false,
       "stack": "system",
       "platform": {
