@@ -3,17 +3,7 @@
     "level": "info",
     "timestamp": true
   },
-  "experimental": {
-    "clash_api": {
-      "external_controller": "0.0.0.0:9999",
-      "external_ui": "/etc/ShellCrash/ui",
-      "secret": "",
-      "external_ui_download_url": "https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
-      "external_ui_download_detour": "🎯 全球直连",
-      "default_mode": "rule"
-      }
-    },
-
+  
   "dns": {
     "servers": [
       {"tag": "proxyDns", "address": "https://dns.google/dns-query", "address_resolver": "localDns", "address_strategy": "prefer_ipv4","client_subnet": "1.0.1.0","detour": "🚀 节点选择"},
