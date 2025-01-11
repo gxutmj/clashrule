@@ -7,18 +7,20 @@
   "dns": {
     "servers": [
       {"tag": "proxyDns", "address": "https://dns.google/dns-query", "address_resolver": "localDns", "address_strategy": "prefer_ipv4","client_subnet": "1.0.1.0","detour": "🚀 节点选择"},
-      {"tag": "localDns", "address": "192.168.100.200", "address_strategy": "prefer_ipv4","detour": "🎯 全球直连"},
+      {"tag": "localDns", "address": "192.168.100.200", "address_strategy": "prefer_ipv4","detour": "DIRECT"},
       {"tag": "block", "address": "rcode://success"}
     ],
  "rules": [
       {"outbound": "any", "server": "localDns", "disable_cache": true},
       {"query_type": "HTTPS","server": "block"},
-      {"rule_set": "geosite-cn", "server": "localDns"},
       {"clash_mode": "direct", "server": "localDns"},
       {"clash_mode": "global", "server": "proxyDns"},
+      {"rule_set": "geosite-cn", "server": "localDns"},
       {"rule_set": "geosite-geolocation-!cn", "server": "proxyDns"}
     ],
     "final": "proxyDns",
+    "independent_cache": true,
+    "reverse_mapping": true,
     "strategy": "prefer_ipv4"
   },
 
