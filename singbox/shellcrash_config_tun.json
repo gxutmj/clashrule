@@ -81,7 +81,7 @@
       { "type": "logical", "mode": "or", "rules": [{ "port": 53 }, { "protocol": "dns" }], "outbound": "dns-out" },
       { "clash_mode": "direct", "outbound": "🎯 全球直连" },
       { "clash_mode": "global", "outbound": "GLOBAL" },
-      { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连" },
+      { "domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one", "gxutmj.eu.org"], "outbound": "🎯 全球直连" },
       { "ip_is_private": true, "outbound": "🎯 全球直连" },
       { "rule_set": "geosite-microsoft-cn", "outbound": "🪟 微软中国" }, 
       { "rule_set": ["geosite-xboxdlcn", "geosite-steamcn", "geosite-applecn"], "outbound": "🎯 全球直连" },
