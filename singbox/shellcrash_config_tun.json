@@ -15,8 +15,7 @@
       {"query_type": "HTTPS","server": "block"},
       {"clash_mode": "direct", "server": "localDns"},
       {"clash_mode": "global", "server": "proxyDns"},
-      {"rule_set": ["geosite-cn", "geosite-custom"],"server": "localDns"},
-      {"rule_set": "geosite-geolocation-!cn", "server": "proxyDns"}
+      {"rule_set": ["geosite-cn", "geosite-custom"],"server": "localDns"}
     ],
     "final": "proxyDns",
     "independent_cache": true,
