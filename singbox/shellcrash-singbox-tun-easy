@@ -81,9 +81,9 @@
       { "rule_set": "geosite-youtube", "outbound": "📹 YouTube" },
       { "rule_set": ["geosite-steam", "geosite-xbox"], "outbound": "🎮 游戏平台" },
       { "rule_set": "geosite-google", "outbound": "🔍 Google" },
+      { "rule_set": "geosite-github", "outbound": "🚀 节点选择" }, 
       { "rule_set": "geosite-microsoftProxy", "outbound": "Ⓜ️ 微软代理" }, 
       { "rule_set": "geosite-microsoft", "outbound": "🪟 微软中国" }, 
-      { "rule_set": "geosite-github", "outbound": "🚀 节点选择" }, 
       { "rule_set": ["geosite-telegram", "geosite-tiktok"], "outbound": "🚀 节点选择" }
     ],
     
