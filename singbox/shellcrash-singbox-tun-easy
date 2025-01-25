@@ -57,6 +57,7 @@
     { "tag": "🤖 人工智能", "type": "selector", "outbounds": [ "🔄 AI自选", "🔧 手动切换"] },
     { "tag": "🔍 Google", "type": "selector", "outbounds": ["🚀 节点选择", "🏆 高级自选", "🔧 手动切换"] },
     { "tag": "💻 Github", "type": "selector", "outbounds": ["🚀 节点选择", "🎯 全球直连"] },
+    { "tag": "🟩 Nvidia", "type": "selector", "outbounds": ["🚀 节点选择", "🎯 全球直连"] }
     { "tag": "Ⓜ️ 微软代理", "type": "selector", "outbounds": ["🚀 节点选择", "🎯 全球直连"] },
     { "tag": "🪟 微软中国", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 节点选择"] },
     { "tag": "🏆 高级自选", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["香港|港|🇭🇰|HK|hk|Hong Kong|HongKong|hongkong|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|台|新北|彰化|TW|Taiwan|新加坡|坡|狮城|SG|Singapore|KR|Korea|KOR|首尔|韩|韓|春川"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },
@@ -83,6 +84,7 @@
       { "rule_set": ["geosite-steam", "geosite-xbox"], "outbound": "🎮 游戏平台" },
       { "rule_set": "geosite-google", "outbound": "🔍 Google" },
       { "rule_set": "geosite-github", "outbound": "💻 Github" }, 
+      { "rule_set": "geosite-nvidia", "outbound": "🟩 Nvidia" }, 
       { "rule_set": "geosite-microsoftProxy", "outbound": "Ⓜ️ 微软代理" }, 
       { "rule_set": ["geosite-telegram", "geosite-tiktok"], "outbound": "🚀 节点选择" }, 
       { "rule_set": "geosite-microsoft", "outbound": "🪟 微软中国" }
