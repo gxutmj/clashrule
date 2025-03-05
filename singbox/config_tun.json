@@ -58,11 +58,11 @@
        "endpoint_independent_nat": false,
        "udp_timeout": "5m",
        "stack": "system",
-      "platform": {
-        "http_proxy": {
-          "enabled": true,
-          "server": "::",
-          "server_port": 7890
+       "platform": {
+         "http_proxy": {
+           "enabled": true,
+           "server": "::",
+           "server_port": 7890
         }
       }
     },
