@@ -48,6 +48,8 @@
        "address": ["172.19.0.1/30","fdfe:dcba:9876::1/126"],
        "mtu": 9000,
        "auto_route": true,
+       "route_address_set": ["geoip-cloudflare"],
+       "route_exclude_address_set": ["geoip-cn"],
        "strict_route": true,
        "endpoint_independent_nat": false,
        "udp_timeout": "5m",
@@ -59,12 +61,6 @@
            "server_port": 7890
         }
       }
-    },
-    {
-      "type": "direct",
-      "tag": "dns-in",
-      "listen": "::",
-      "listen_port": 1053
     },
     {
       "type": "mixed",
