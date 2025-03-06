@@ -22,7 +22,7 @@
   "dns": {
     "servers": [
       {"tag": "proxyDns", "address": "https://dns.google/dns-query", "address_resolver": "localDns", "address_strategy": "prefer_ipv4","client_subnet": "113.16.8.8","detour": "🚀 节点选择"},
-      {"tag": "localDns", "address": "223.5.5.5", "address_strategy": "prefer_ipv4","detour": "direct"},
+      {"tag": "localDns", "address": "223.5.5.5", "address_strategy": "prefer_ipv4","detour": "🎯 全球直连"},
       {"tag": "block", "address": "rcode://success"}
     ],
  "rules": [
@@ -93,7 +93,6 @@
     { "tag": "🔧 手动切换", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["网站|地址|官网|到期|剩余|过期|时间|订阅|有效"] } ] },
     { "tag": "♻️ 自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["网站|地址|官网|到期|剩余|过期|时间|订阅|有效"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },
     { "tag": "GLOBAL", "type": "selector", "outbounds": ["🏆 高级自选", "🔄 AI自选", "♻️ 自动选择", "🔧 手动切换"]},
-    {"tag": "direct", "type": "direct"},
     { "tag": "🎯 全球直连", "type": "direct" }
   ],
 
