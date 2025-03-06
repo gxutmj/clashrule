@@ -8,7 +8,7 @@
   "experimental": {
     "clash_api": {
       "external_controller": "0.0.0.0:9999",
-      "external_ui": "/etc/sing-box/ui",
+      "external_ui": "/ui",
       "secret": "",
       "external_ui_download_url": "https://ghproxy.gxutmj.us.kg/https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
       "external_ui_download_detour": "🎯 全球直连",
@@ -33,7 +33,9 @@
       {"rule_set": ["geosite-cn", "geosite-custom"],"server": "localDns"}
     ],
     "final": "proxyDns",
-    "independent_cache": true,
+    "disable_cache": false,
+    "disable_expire": false,
+    "independent_cache": false,
     "reverse_mapping": true,
     "strategy": "prefer_ipv4"
   },
@@ -66,6 +68,12 @@
            "server_port": 7890
         }
       }
+    },
+    {
+      "type": "direct",
+      "tag": "dns-in",
+      "listen": "::",
+      "listen_port": 1053
     },
     {
       "type": "mixed",
