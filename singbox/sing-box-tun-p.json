@@ -82,7 +82,7 @@
     ],
     
     "rule_set": [
-      { "tag": "geosite-custom", "type": "remote", "format": "binary", "url": "https://ghproxy.gxutmj.workers.dev/https://raw.githubusercontent.com/gxutmj/clashrule/refs/heads/main/singbox/geosite-custom.srs", "download_detour": "🎯 全球直连" },
+      { "tag": "geosite-custom", "type": "remote", "format": "binary", "url": "https://ghproxy.gxutmj.workers.dev/https://github.com/gxutmj/clashrule/raw/refs/heads/main/singbox/geosite-custom.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-ai", "type": "remote", "format": "binary", "url": "https://ghproxy.gxutmj.workers.dev/https://raw.githubusercontent.com/Toperlock/sing-box-geosite/main/rule/OpenAI.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://ghproxy.gxutmj.workers.dev/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-steam", "type": "remote", "format": "binary", "url": "https://ghproxy.gxutmj.workers.dev/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/steam.srs", "download_detour": "🎯 全球直连" },
