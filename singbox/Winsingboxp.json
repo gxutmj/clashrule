@@ -48,11 +48,8 @@
        "address": ["172.19.0.1/30"],
        "mtu": 9000,
        "auto_route": true,
-       "route_address_set": ["geoip-cloudflare"],
        "route_exclude_address_set": ["geoip-cn"],
        "strict_route": true,
-       "endpoint_independent_nat": false,
-       "udp_timeout": "5m",
        "stack": "system",
        "platform": {
          "http_proxy": {
@@ -129,8 +126,7 @@
       { "tag": "geosite-microsoftProxy", "type": "remote", "format": "binary", "url": "https://ghproxy.gxutmj.us.kg/https://github.com/gxutmj/clashrule/raw/refs/heads/main/singbox/MicrosoftProxy.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-microsoft", "type": "remote", "format": "binary", "url": "https://ghproxy.gxutmj.us.kg/https://github.com/senshinya/singbox_ruleset/raw/refs/heads/main/rule/Microsoft/Microsoft.srs", "download_detour": "🎯 全球直连" },
       { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://ghproxy.gxutmj.us.kg/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs", "download_detour": "🎯 全球直连" },
-      { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://ghproxy.gxutmj.us.kg/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geoip/cn.srs", "download_detour": "🎯 全球直连" },
-      { "tag": "geoip-cloudflare", "type": "remote", "format": "binary", "url": "https://ghproxy.gxutmj.us.kg/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geoip/cloudflare.srs", "download_detour": "🎯 全球直连" }
+      { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://ghproxy.gxutmj.us.kg/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geoip/cn.srs", "download_detour": "🎯 全球直连" }
     ]
   }
 }
