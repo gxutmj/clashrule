@@ -76,7 +76,6 @@
       "type": "mixed",
       "listen": "::",
       "listen_port": 7892,
-      "sniff": true,
       "users": []
     }
   ],
@@ -102,6 +101,7 @@
 
   "route": {
         "auto_detect_interface": true,
+        "action": "sniff",
         "final": "GLOBAL",
     "rules": [
       { "type": "logical", "mode": "or", "rules": [{ "port": 53 }, { "protocol": "dns" }], "outbound": "dns-out" },
