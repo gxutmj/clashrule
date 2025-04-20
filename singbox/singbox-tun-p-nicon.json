@@ -1,0 +1,106 @@
+{
+  "log": {
+    "level": "info",
+    "timestamp": true
+  },
+  
+ "dns": {
+    "servers": [
+      {"tag": "proxyDns", "address": ["https://dns.google/dns-query", "https://dns.cloudflare.com/dns-query"], "address_resolver": "localDns", "address_strategy": "prefer_ipv4","client_subnet": "1.0.1.0","detour": "节点选择"},
+      {"tag": "localDns", "address": ["https://120.53.53.53/dns-query", "https://223.5.5.5/dns-query"], "address_resolver": "BootstrapDns","address_strategy": "prefer_ipv4","detour": "全球直连"},
+      {"tag": "BootstrapDns", "address": ["223.5.5.5", "119.29.29.29"], "address_strategy": "prefer_ipv4","detour": "全球直连"},
+      {"tag": "block", "address": "rcode://success"}
+    ],
+  "rules": [
+      {"outbound": "any", "server": "localDns", "disable_cache": true},
+      {"query_type": "HTTPS","server": "block"},
+      {"clash_mode": "direct", "server": "localDns"},
+      {"clash_mode": "global", "server": "proxyDns"},
+      {"rule_set": ["geosite-cn", "geosite-custom"],"server": "localDns"}
+    ],
+    "final": "proxyDns",
+    "disable_cache": true,
+    "strategy": "prefer_ipv4"
+  },
+
+"inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "address": ["172.19.0.1/30","fdfe:dcba:9876::1/126"],
+      "interface_name": "tun0",
+      "mtu": 9000,
+      "gso": true,
+      "auto_route": true,
+      "auto_redirect": true,
+      "sniff_override_destination": true,
+      "endpoint_independent_nat": false,
+      "sniff": true,
+      "stack": "system"
+    }
+  ],
+
+  "outbounds": [
+    { "tag": "节点选择", "type": "selector", "outbounds": ["高级自选", "AI自选", "自动选择", "手动切换", "全球直连"] },
+    { "tag": "YouTube", "type": "selector", "outbounds": ["节点选择", "高级自选", "自动选择", "手动切换"] },
+    { "tag": "TikTok", "type": "selector", "outbounds": ["AI自选", "节点选择", "手动切换"] },
+    { "tag": "游戏平台", "type": "selector", "outbounds": ["节点选择", "高级自选", "手动切换"] },
+    { "tag": "人工智能", "type": "selector", "outbounds": ["AI自选", "手动切换"] },
+    { "tag": "Google", "type": "selector", "outbounds": ["节点选择", "高级自选", "手动切换"] },
+    { "tag": "Github", "type": "selector", "outbounds": ["节点选择", "全球直连"] },
+    { "tag": "Telegram", "type": "selector", "outbounds": ["节点选择", "手动切换"] },
+    { "tag": "Nvidia", "type": "selector", "outbounds": ["节点选择", "全球直连"] },
+    { "tag": "微软代理", "type": "selector", "outbounds": ["节点选择", "全球直连"] },
+    { "tag": "微软中国", "type": "selector", "outbounds": ["全球直连", "节点选择"] },
+    { "tag": "高级自选", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["香港|港|🇭🇰|HK|hk|Hong Kong|HongKong|hongkong|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|台|新北|彰化|TW|Taiwan|新加坡|坡|狮城|SG|Singapore|KR|Korea|KOR|首尔|韩|韓|春川"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 30 },
+    { "tag": "AI自选", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["红杏"] }, { "action": "include", "keywords": ["日本", "韩国", "新加坡", "台湾"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 30 },
+    { "tag": "手动切换", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["套餐|到期|有效|剩余|版本|已用|过期|失联|测试|官方|官网|网址|备用|群|TEST|客服|网站|获取|订阅|流量|机场|下次|官址|联系|邮箱|工单"] } ] },
+    { "tag": "自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["套餐|到期|有效|剩余|版本|已用|过期|失联|测试|官方|官网|网址|备用|群|TEST|客服|网站|获取|订阅|流量|机场|下次|官址|联系|邮箱|工单"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 30 },
+    { "tag": "漏网之鱼", "type": "selector", "outbounds": ["节点选择","全球直连"] },
+    { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
+    { "tag": "全球直连", "type": "direct" },
+    { "tag": "dns-out", "type": "dns" }
+  ],
+  
+  "route": {
+        "auto_detect_interface": true,
+        "final": "漏网之鱼",
+    "rules": [
+      { "type": "logical", "mode": "or", "rules": [{ "port": 53 }, { "protocol": "dns" }], "outbound": "dns-out" },
+      { "clash_mode": "global", "outbound": "GLOBAL" },
+      { "clash_mode": "direct", "outbound": "全球直连" },
+      { "rule_set": "geosite-custom", "outbound": "全球直连" },
+      { "rule_set": ["geosite-xboxdlcn", "geosite-steamcn"], "outbound": "全球直连" },
+      { "rule_set": "geosite-applecn", "outbound": "全球直连" },
+      { "rule_set": "geosite-ai", "outbound": "人工智能" },
+      { "rule_set": ["geosite-steam", "geosite-xbox"], "outbound": "游戏平台" },
+      { "rule_set": "geosite-youtube", "outbound": "YouTube" },
+      { "rule_set": "geosite-google", "outbound": "Google" },
+     { "rule_set": "geosite-tiktok", "outbound": "TikTok" }, 
+      { "rule_set": "geosite-github", "outbound": "Github" }, 
+      { "rule_set": "geosite-nvidia", "outbound": "Nvidia" }, 
+      { "rule_set": "geosite-microsoftProxy", "outbound": "微软代理" }, 
+      { "rule_set": "geosite-telegram", "outbound": "Telegram" }, 
+      { "rule_set": "geosite-microsoft", "outbound": "微软中国" }
+    ],
+    
+    "rule_set": [
+      { "tag": "geosite-custom", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://github.com/gxutmj/clashrule/raw/refs/heads/main/singbox/geosite-custom.srs", "download_detour": "全球直连" },
+      { "tag": "geosite-ai", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://github.com/gxutmj/clashrule/raw/refs/heads/main/singbox/AI.srs", "download_detour": "全球直连" },
+      { "tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs", "download_detour": "全球直连" },
+      { "tag": "geosite-steam", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/steam.srs", "download_detour": "全球直连" },
+      { "tag": "geosite-steamcn", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/steam@cn.srs", "download_detour": "全球直连" },
+      { "tag": "geosite-xbox", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/xbox.srs", "download_detour": "全球直连" },
+      { "tag": "geosite-xboxdlcn", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://raw.githubusercontent.com/DDCHlsq/sing-ruleset/ruleset/xboxdlcn.srs", "download_detour": "全球直连" },
+      { "tag": "geosite-applecn", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/apple@cn.srs", "download_detour": "全球直连" },
+      { "tag": "geosite-nvidia", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/nvidia.srs", "download_detour": "全球直连" },
+      { "tag": "geosite-google", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs", "download_detour": "全球直连" },
+      { "tag": "geosite-github", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs", "download_detour": "全球直连" },
+      { "tag": "geosite-telegram", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs", "download_detour": "全球直连" },
+      { "tag": "geosite-tiktok", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tiktok.srs", "download_detour": "全球直连" },
+      { "tag": "geosite-microsoftProxy", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://github.com/gxutmj/clashrule/raw/refs/heads/main/singbox/MicrosoftProxy.srs", "download_detour": "全球直连" },
+      { "tag": "geosite-microsoft", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://github.com/senshinya/singbox_ruleset/raw/refs/heads/main/rule/Microsoft/Microsoft.srs", "download_detour": "全球直连" },
+      { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs", "download_detour": "全球直连" }
+    ]
+  }
+}
