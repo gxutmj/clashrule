@@ -25,7 +25,7 @@
     "fakeip": { "enabled": true, "inet4_range": "198.18.0.0/16", "inet6_range": "fc00::/16" }
   },
   "inbounds": [
-     { "tag": "tun-in", "type": "tun", "interface_name": "tun0", "stack": "mixed", "inet4_address": [ "172.19.0.1/30" ], "inet6_address": [ "fdfe:dcba:9876::1/126" ], "auto_route": true, "strict_route": true, "sniff": true}
+     { "tag": "tun-in", "type": "tun", "interface_name": "tun0", "stack": "mixed", "address": [ "172.19.0.1/30","fdfe:dcba:9876::1/126" ], "auto_route": true, "strict_route": true, "sniff": true}
   ],
   "outbounds": [
     { "tag": "🔗 节点选择", "type": "selector", "outbounds": ["♻️ 自动选择", "♻︎ AI自选", "🇺🇸 美国节点", "⚙️ 手动切换", "🌐 全球直连"] },
@@ -58,16 +58,18 @@
       { "rule_set": "geosite-custom", "outbound": "🌐 全球直连" },
       { "rule_set": ["geosite-xboxdlcn", "geosite-steamcn"], "outbound": "🌐 全球直连" },
       { "rule_set": "geosite-applecn", "outbound": "🌐 全球直连" },
+      {"rule_set": "geosite-cn", "outbound": "🌐 全球直连"},
       { "rule_set": "geosite-ai", "outbound": "🤖 人工智能" },
       { "rule_set": ["geosite-microsoft", "geosite-xbox"], "outbound": "🏢 微软中国" }, 
       { "rule_set": "geosite-steam", "outbound": "🎮 游戏平台" },
       { "rule_set": "geosite-youtube", "outbound": "📺 YouTube" },
       { "rule_set": "geosite-google", "outbound": "🔍 Google" },
-      { "rule_set": "geosite-tiktok", "outbound": "🎵 TikTok" }, 
-      { "rule_set": "geosite-github", "outbound": "💻 Github" }, 
-      { "rule_set": "geosite-nvidia", "outbound": "🖥 Nvidia" }, 
-      { "rule_set": "geosite-microsoftProxy", "outbound": "Ⓜ️ 微软代理" }, 
-      { "rule_set": "geosite-telegram", "outbound": "📲 Telegram" }
+      { "rule_set": "geosite-tiktok", "outbound": "🎵 TikTok" },
+      { "rule_set": "geosite-github", "outbound": "💻 Github" },
+      { "rule_set": "geosite-nvidia", "outbound": "🖥 Nvidia" },
+      { "rule_set": "geosite-microsoftProxy", "outbound": "Ⓜ️ 微软代理" },
+      { "rule_set": "geosite-telegram", "outbound": "📲 Telegram" },
+      { "rule_set": "geoip-cn", "outbound": "🎯 全球直连" }
     ],
    "rule_set": [
       { "tag": "geosite-ai", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/ai.srs", "download_detour": "🌐 全球直连" },
@@ -84,7 +86,8 @@
       { "tag": "geosite-tiktok", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tiktok.srs", "download_detour": "🌐 全球直连" },
       { "tag": "geosite-microsoftProxy", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://github.com/gxutmj/clashrule/raw/refs/heads/main/singbox/MicrosoftProxy.srs", "download_detour": "🌐 全球直连" },
       { "tag": "geosite-microsoft", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://github.com/senshinya/singbox_ruleset/raw/refs/heads/main/rule/Microsoft/Microsoft.srs", "download_detour": "🌐 全球直连" },
-      { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs", "download_detour": "🌐 全球直连" }
+      { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs", "download_detour": "🌐 全球直连" },
+      { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/qljsyph/ruleset-icon/raw/refs/heads/main/sing-box/geoip/China-ASN-combined-ip.srs", "download_detour": "🎯 全球直连"}
     ]
     }
   }
