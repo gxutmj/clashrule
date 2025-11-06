@@ -86,7 +86,8 @@
       { "tag": "geosite-tiktok", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tiktok.srs", "download_detour": "🌐 全球直连" },
       { "tag": "geosite-microsoftProxy", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://github.com/gxutmj/clashrule/raw/refs/heads/main/singbox/MicrosoftProxy.srs", "download_detour": "🌐 全球直连" },
       { "tag": "geosite-microsoft", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://github.com/senshinya/singbox_ruleset/raw/refs/heads/main/rule/Microsoft/Microsoft.srs", "download_detour": "🌐 全球直连" },
-      { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs", "download_detour": "🌐 全球直连" },
+      { "tag": "geosite-custom", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/ai.srs", "download_detour": "🌐 全球直连" },
+      { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://github.com/gxutmj/clashrule/raw/refs/heads/main/singbox/geosite-custom.srs", "download_detour": "🌐 全球直连" },
       { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://ghproxy.520yun.eu.org/https://github.com/qljsyph/ruleset-icon/raw/refs/heads/main/sing-box/geoip/China-ASN-combined-ip.srs", "download_detour": "🌐 全球直连"}
     ]
     }
